@@ -8,6 +8,6 @@ export class LinkController {
 
   @Post()
   async create(@Body() createLinkDto: CreateLinkDto) {
-    return await this.linkService.create(createLinkDto);
+    return await this.linkService.generateLink(createLinkDto);
   }
 }

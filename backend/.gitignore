@@ -3,6 +3,8 @@
 /build
 /node_modules/
 .pnpm-store/
+.env
+
 
 # === Logs ===
 logs
