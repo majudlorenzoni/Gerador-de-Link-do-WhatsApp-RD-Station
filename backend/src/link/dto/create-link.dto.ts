@@ -1,21 +1,45 @@
-import { IsNotEmpty, IsString, Matches, MinLength } from 'class-validator';
+import {
+  IsNotEmpty,
+  IsString,
+  MinLength,
+  Matches,
+  IsIn,
+} from 'class-validator';
 
 export class CreateLinkDto {
   @IsString()
-  @IsNotEmpty()
-  @MinLength(2, { message: 'O nome deve ter pelo menos 2 caracteres.' })
+  @MinLength(2, { message: 'Nome deve ter pelo menos 2 caracteres' })
   name: string;
 
-  @Matches(/^\(?\d{2}\)? ?\d{4,5}-?\d{4}$/, {
-    message: 'Invalid phone format',
+  @IsString()
+  @Matches(/^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$/, {
+    message:
+      'Telefone inválido. Formato esperado: (99) 99999-9999 ou (99) 9999-9999',
   })
   phone: string;
 
   @IsString()
-  @IsNotEmpty({ message: 'A mensagem não pode estar vazia.' })
+  @IsNotEmpty({ message: 'Mensagem não pode ser vazia' })
   message: string;
 
   @IsString()
-  @IsNotEmpty({ message: 'O cargo é obrigatório.' })
+  @IsIn(
+    [
+      'Sócio(a) / CEO / Proprietário(a)',
+      'Diretor(a) de Vendas',
+      'Diretor(a) de Marketing',
+      'Diretor(a) Outras Áreas',
+      'Gerente de Marketing',
+      'Gerente de Vendas',
+      'Coordenador(a)/Supervisor(a) de Marketing',
+      'Coordenador(a)/Supervisor(a) de Vendas',
+      'Analista/Assistente de Marketing',
+      'Analista/Assistente de Vendas',
+      'Vendedor(a) / Executivo(a) de Contas',
+      'Estudante',
+      'Outros Cargos',
+    ],
+    { message: 'Cargo inválido' },
+  )
   role: string;
 }

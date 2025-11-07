@@ -1,8 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import request from 'supertest';
-import { LinkController } from '../src/link/link.controller';
-import { LinkService } from '../src/link/link.service';
+import { LinkController } from '../link.controller';
+import { LinkService } from '../link.service';
 
 describe('LinkController (e2e)', () => {
   let app: INestApplication;
