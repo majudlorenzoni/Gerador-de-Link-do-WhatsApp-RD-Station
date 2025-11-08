@@ -42,7 +42,6 @@ export const Benefits: React.FC<BenefitsProps> = ({
 }) => {
 
   const scrollToForm = () => {
-  console.log('Botão clicado!');
   
   const formSection = document.querySelector('section.form-section');
   if (formSection) {

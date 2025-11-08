@@ -6,7 +6,7 @@ import { Form } from './components/form'
 import { Topics } from './components/topics'
 import { Benefits } from './components/benefits'
 import { How } from './components/how'
-
+import { Examples } from './components/examples'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Header />
@@ -14,5 +14,6 @@ createRoot(document.getElementById('root')!).render(
     <Topics />
     <Benefits />
     <How />
+    <Examples />
   </StrictMode>,
 )
