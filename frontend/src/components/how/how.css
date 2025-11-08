@@ -1,0 +1,200 @@
+.how-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 70px 50px;
+  margin: 0 auto;
+}
+
+.how-header {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 800px;
+}
+
+.how-title {
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  color: #000000;
+  line-height: 1.3;
+  margin: 0 0 20px 0;
+}
+
+.how-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 20px;
+  color: #000000;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: normal;
+}
+
+.how-content {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  width: 100%;
+}
+
+.how-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  max-width: 300px;
+}
+
+.how-icon {
+  width: 32px;
+  margin-bottom: 20px;
+}
+
+.how-text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.how-item-description {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  color: #3A4149;
+  line-height: 1.5;
+  margin: 0;
+  font-weight: normal;
+}
+
+/* MOBILE - 375px */
+@media (max-width: 375px) {
+  .how-container {
+    padding: 40px 20px;
+  }
+  
+  .how-header {
+    margin-bottom: 40px;
+  }
+  
+  .how-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .how-subtitle {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .how-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .how-item {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    max-width: 100%;
+    gap: 15px;
+  }
+  
+  .how-icon {
+    width: 24px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  
+  .how-text {
+    flex: 1;
+    gap: 8px;
+  }
+  
+  .how-item-description {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+
+/* TABLET - 768px */
+@media (max-width: 768px) {
+  .how-container {
+    padding: 50px 30px;
+  }
+  
+  .how-title {
+    font-size: 28px;
+  }
+  
+  .how-subtitle {
+    font-size: 18px;
+  }
+  
+  .how-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .how-item {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    max-width: 100%;
+    gap: 20px;
+  }
+  
+  .how-icon {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+}
+
+/* DESKTOP - Acima de 768px */
+@media (min-width: 769px) {
+  .how-content {
+    flex-direction: row;
+  }
+  
+  .how-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .how-icon {
+    margin-bottom: 20px;
+  }
+}
+
+/* DESKTOP GRANDE - 1440px */
+@media (min-width: 1440px) {
+  .how-container {
+    padding: 70px 90px;
+    max-width: 1400px;
+  }
+  
+  .how-content {
+    gap: 60px;
+  }
+  
+  .how-item {
+    max-width: 350px;
+  }
+  
+  .how-title {
+    font-size: 36px;
+  }
+  
+  .how-subtitle {
+    font-size: 22px;
+  }
+  
+  .how-item-description {
+    font-size: 18px;
+  }
+  
+  .how-icon {
+    width: 40px;
+  }
+}

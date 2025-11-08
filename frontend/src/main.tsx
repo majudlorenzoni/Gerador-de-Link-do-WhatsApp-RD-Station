@@ -5,11 +5,14 @@ import Header from './components/header'
 import { Form } from './components/form'
 import { Topics } from './components/topics'
 import { Benefits } from './components/benefits'
+import { How } from './components/how'
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Header />
     <Form />
     <Topics />
     <Benefits />
+    <How />
   </StrictMode>,
 )
