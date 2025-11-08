@@ -85,7 +85,7 @@
   margin-top: 2px;
 }
 
-@media (max-width: 375px) {
+@media (min-width: 375px) {
   .benefits-container {
     flex-direction: column;
     padding: 20px 15px;
@@ -150,7 +150,6 @@
   }
   
   .generate-button {
-    width: 65%;
     max-width: none;
     padding: 14px 20px;
     font-size: 16px;
@@ -164,25 +163,14 @@
     padding: 40px 20px;
   }
   
-  .benefits-title {
-    flex: 0 0 100%;
-  }
-  
-  .benefits-info {
+  .benefits-title,
+  .benefits-info
+   {
     flex: 0 0 100%;
   }
   
   .benefits-title h1 {
     font-size: 36px;
-    text-align: center;
-  }
-  
-  .benefits-info h3 {
-    text-align: center;
-  }
-  
-  .benefits-info h5 {
-    text-align: center;
   }
   
   .benefits-topic {
@@ -206,17 +194,12 @@
     flex: 0 0 60%;
   }
   
-  .benefits-title h1 {
+  .benefits-title h1,
+  .benefits-info h3,
+  .benefits-info h5
+   {
     text-align: left;
 
-  }
-  
-  .benefits-info h3 {
-    text-align: left;
-  }
-  
-  .benefits-info h5 {
-    text-align: left;
   }
   
   .benefits-topic {
@@ -224,6 +207,11 @@
   }
 }
 
+@media(min-width: 1024px){
+ .benefits-info{
+  flex: 0 0 55%;
+ }
+}
 @media (min-width: 1440px) {
   .benefits-container {
     gap: 60px;

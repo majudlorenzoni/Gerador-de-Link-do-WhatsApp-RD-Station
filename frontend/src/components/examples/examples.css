@@ -28,6 +28,7 @@
   justify-content: center;
   width: 100%;
   max-width: 1200px;
+  margin-bottom: 20px;
 }
 
 .example-box {
@@ -38,10 +39,6 @@
   flex: 1;
   max-width: 350px;
   text-align: left;
-}
-
-.example-box:last-child {
-  margin-bottom: 20px;
 }
 
 .example-title {
@@ -86,6 +83,10 @@
   .example-description {
     font-size: 14px;
   }
+
+  .example-box:last-child {
+  margin-bottom: 20px;
+}
 }
 
 @media (max-width: 768px) {
@@ -107,15 +108,15 @@
   .examples-title {
     font-size: 28px;
   }
+
+  .example-box:last-child {
+  margin-bottom: 20px;
+}
 }
 
 @media (min-width: 1440px) {
   .examples-container {
     padding: 100px 90px;
-  }
-  
-  .examples-content {
-    gap: 40px;
   }
   
   .example-box {

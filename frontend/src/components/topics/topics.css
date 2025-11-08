@@ -97,6 +97,18 @@
   }
 }
 
+@media(min-width: 1024px){
+  .module {
+    width: 460px;
+  }
+
+  .img-phone {
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+  }
+}
+
 @media (min-width: 1440px) {
   .modules-column {
     margin: 60px auto;

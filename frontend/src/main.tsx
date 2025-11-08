@@ -8,7 +8,7 @@ import { Benefits } from './components/benefits'
 import { How } from './components/how'
 import { Examples } from './components/examples'
 import { FAQ } from './components/faq'
-
+import { Footer } from './components/footer'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Header />
@@ -18,5 +18,6 @@ createRoot(document.getElementById('root')!).render(
     <How />
     <Examples />
     <FAQ />
+    <Footer />
   </StrictMode>,
 )

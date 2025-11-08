@@ -41,7 +41,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 230px;
   width: auto;
 }
 
@@ -49,10 +48,10 @@
   background-color: #00b3aa;
 }
 
-@media (max-width: 375px) {
+@media (min-width: 375px) {
   .button-with-icon,
   .generate-button {
-    width: 60%;
+    max-width: 250px;
     padding: 14px 20px;
     font-size: 16px;
     z-index: 20;
@@ -60,7 +59,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .button-with-icon,
   .generate-button {
     width: 100%;

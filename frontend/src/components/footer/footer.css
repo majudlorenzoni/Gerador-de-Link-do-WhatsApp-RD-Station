@@ -1,0 +1,135 @@
+.footer {
+  background-color: #F1F3F5;
+  height: auto; /* Altura automática para ser responsiva */
+  min-height: 56px; /* Altura mínima para desktop */
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  border-top: 1px solid #E1E5E9;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 50px; /* Padding vertical aumentado */
+}
+
+.footer-left {
+  flex: 1;
+}
+
+.footer-text {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px;
+  color: #3A4149;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.footer-link {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px;
+  color: #005A87;
+  text-decoration: none;
+  margin: 0 4px;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #003D5C;
+  text-decoration: underline;
+}
+
+.privacy-link {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px;
+  color: #005A87;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.privacy-link:hover {
+  color: #003D5C;
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .footer-content {
+    padding: 12px 30px;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .footer-left,
+  .footer-right {
+    width: 100%;
+  }
+  
+  .footer-text {
+    font-size: 12px;
+    text-align: center;
+    line-height: 1.5;
+  }
+  
+  .footer-link,
+  .privacy-link {
+    font-size: 12px;
+  }
+  
+  .footer {
+    min-height: 70px; /* Mais alto para tablet */
+  }
+}
+
+@media (max-width: 375px) {
+  .footer-content {
+    padding: 10px 20px;
+    gap: 8px;
+  }
+  
+  .footer-text {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+  
+  .footer-link,
+  .privacy-link {
+    font-size: 11px;
+  }
+  
+  .footer {
+    min-height: 80px; /* Mais alto para mobile */
+  }
+}
+
+/* Para telas muito pequenas */
+@media (max-width: 320px) {
+  .footer {
+    min-height: 90px; /* Extra alto para telas muito pequenas */
+  }
+  
+  .footer-content {
+    padding: 8px 15px;
+  }
+  
+  .footer-text {
+    font-size: 10px;
+  }
+  
+  .footer-link,
+  .privacy-link {
+    font-size: 10px;
+  }
+}
