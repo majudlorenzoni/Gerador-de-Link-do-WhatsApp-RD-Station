@@ -16,7 +16,6 @@ export class CreateLinkDto {
     message: 'Telefone inválido. Use: (99) 99999-9999 ou 99999999999',
   })
   phone: string;
-  phone: string;
 
   @IsString()
   @IsNotEmpty({ message: 'Mensagem não pode ser vazia' })
