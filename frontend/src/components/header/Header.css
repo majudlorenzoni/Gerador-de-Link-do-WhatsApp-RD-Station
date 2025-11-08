@@ -70,24 +70,12 @@
   }
 
   .header-title {
-    font-size: 24px;
-  }
-
-  .header-left {
-    gap: 1rem;
+    font-size: 20px;
   }
 }
 
 @media (min-width: 1920px) {
   .header {
     padding: 1rem 4rem;
-  }
-
-  .header-title {
-    font-size: 26px;
-  }
-
-  .header-left {
-    gap: 1.25rem;
   }
 }

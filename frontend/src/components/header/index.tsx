@@ -1,5 +1,5 @@
 import React from 'react';
-import './Header.css';
+import './header.css';
 import RDStation from '../../assets/rd-station-default.svg'
 
 const Header: React.FC = () => {

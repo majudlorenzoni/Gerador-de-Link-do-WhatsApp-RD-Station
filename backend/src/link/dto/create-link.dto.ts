@@ -12,10 +12,10 @@ export class CreateLinkDto {
   name: string;
 
   @IsString()
-  @Matches(/^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$/, {
-    message:
-      'Telefone inválido. Formato esperado: (99) 99999-9999 ou (99) 9999-9999',
+  @Matches(/^(\(\d{2}\)\s\d{4,5}-\d{4}|\d{10,11})$/, {
+    message: 'Telefone inválido. Use: (99) 99999-9999 ou 99999999999',
   })
+  phone: string;
   phone: string;
 
   @IsString()
