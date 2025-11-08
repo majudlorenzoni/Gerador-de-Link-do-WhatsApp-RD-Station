@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Form.css';
+import LogoWpp from '../../assets/logo-wpp.png'
+import ArrowRight from '../../assets/arrowright.png'
 
 export const Form: React.FC = () => {
   const [name, setName] = useState('');
@@ -41,8 +43,6 @@ export const Form: React.FC = () => {
         role,
       });
 
-      console.log('Resposta do backend:', response.data);
-
       setLinkResult(response.data.link);
     } catch (err: any) {
       console.error('Erro no request:', err);
@@ -73,8 +73,10 @@ export const Form: React.FC = () => {
       <p className="form-subtitle">Crie seu link de WhatsApp e inicie conversas com um clique nos seus canais digitais!</p>
 
       <form className="form" onSubmit={handleSubmit}>
+       
+       <div className="initial-data">
         <label>
-          Nome
+          Nome*
           <input
             type="text"
             value={name}
@@ -86,7 +88,7 @@ export const Form: React.FC = () => {
         </label>
 
         <label>
-          Número de WhatsApp
+          Número de WhatsApp*
           <input
             type="tel"
             value={phone}
@@ -95,16 +97,7 @@ export const Form: React.FC = () => {
             required
           />
         </label>
-
-        <label>
-          Mensagem Padrão
-          <textarea
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            placeholder="Mensagem que será enviada"
-            required
-          />
-        </label>
+       </div>
 
         <label>
           Cargo
@@ -116,25 +109,44 @@ export const Form: React.FC = () => {
           </select>
         </label>
 
-        <p className="privacy-note">
+          <label>
+          Mensagem
+          <textarea
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder="Crie uma mensagem que facilite a interação com os contatos."
+            required
+          />
+        </label>
+
+      <p className="privacy-note">
         Ao preencher o formulário, concordo * em receber comunicações de acordo com meus interesses.
-        Ao informar meus dados, eu concordo com a Política de privacidade. Você pode alterar suas permissões de comunicação a qualquer tempo.
-        </p>
+        Ao informar meus dados, eu concordo com a <a href="https://legal.rdstation.com/pt/privacy-policy/" target="_blank" rel="noopener noreferrer">Política de privacidade</a>. Você pode alterar suas permissões de comunicação a qualquer tempo.
+      </p>
 
-        <button type="submit" className="generate-button">Gerar Link Grátis</button>
-      </form>
+      <button type="submit" className="generate-button">
+        Gerar link grátis 
+        <img src={ArrowRight} alt="Seta para direita" className="button-icon" />
+      </button>
+    </form>
 
-      {linkResult && (
-        <div className="result">
-          <p>Seu link:</p>
-          <input type="text" readOnly value={linkResult} />
-          <button onClick={handleCopy}>Copiar link</button>
-          <button onClick={handleReset}>Gerar novo link</button>
-        </div>
-      )}
+        <img 
+          src={LogoWpp} 
+          alt="Ícone do WhatsApp - balão de fala verde com telefone branco" 
+          className="icon-whatsapp" 
+        />
 
-      {error && <p className="error">{error}</p>}
-    </section>
+        {linkResult && (
+          <div className="result">
+            <p>Seu link:</p>
+            <input type="text" readOnly value={linkResult} />
+            <button onClick={handleCopy}>Copiar link</button>
+            <button onClick={handleReset}>Gerar novo link</button>
+          </div>
+        )}
+
+        {error && <p className="error">{error}</p>}
+      </section>
   );
 };
 
