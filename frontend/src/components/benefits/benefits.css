@@ -29,7 +29,7 @@
 }
 
 .benefits-info {
-  flex: 0 0 60%; /* Alterado de flex: 1 para 60% */
+  flex: 0 0 60%;
   display: flex;
   flex-direction: column;
 }

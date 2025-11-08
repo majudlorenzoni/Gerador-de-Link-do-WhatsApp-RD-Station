@@ -112,7 +112,6 @@
 @media (min-width: 1440px) {
   .examples-container {
     padding: 100px 90px;
-    max-width: 1400px;
   }
   
   .examples-content {

@@ -7,6 +7,8 @@ import { Topics } from './components/topics'
 import { Benefits } from './components/benefits'
 import { How } from './components/how'
 import { Examples } from './components/examples'
+import { FAQ } from './components/faq'
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Header />
@@ -15,5 +17,6 @@ createRoot(document.getElementById('root')!).render(
     <Benefits />
     <How />
     <Examples />
+    <FAQ />
   </StrictMode>,
 )

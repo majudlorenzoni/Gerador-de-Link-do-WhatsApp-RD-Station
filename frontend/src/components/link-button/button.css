@@ -49,7 +49,6 @@
   background-color: #00b3aa;
 }
 
-/* Media Queries */
 @media (max-width: 375px) {
   .button-with-icon,
   .generate-button {
