@@ -1,15 +1,15 @@
 .footer {
   background-color: #F1F3F5;
-  height: auto; /* Altura automática para ser responsiva */
-  min-height: 56px; /* Altura mínima para desktop */
+  height: auto;
+  min-height: 56px; 
   width: 100%;
   position: relative;
   bottom: 0;
   left: 0;
   z-index: 1000;
   display: flex;
-  align-items: center; /* Centraliza verticalmente */
-  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; 
+  justify-content: center; 
   border-top: 1px solid #E1E5E9;
 }
 
@@ -20,7 +20,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 15px 50px; /* Padding vertical aumentado */
+  padding: 15px 50px;
 }
 
 .footer-left {
@@ -63,7 +63,6 @@
   text-decoration: underline;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
   .footer-content {
     padding: 12px 30px;
@@ -89,7 +88,7 @@
   }
   
   .footer {
-    min-height: 70px; /* Mais alto para tablet */
+    min-height: 70px; 
   }
 }
 
@@ -110,14 +109,13 @@
   }
   
   .footer {
-    min-height: 80px; /* Mais alto para mobile */
+    min-height: 80px;
   }
 }
 
-/* Para telas muito pequenas */
 @media (max-width: 320px) {
   .footer {
-    min-height: 90px; /* Extra alto para telas muito pequenas */
+    min-height: 90px; 
   }
   
   .footer-content {

@@ -18,10 +18,6 @@
   box-sizing: border-box;
 }
 
-.button-with-icon:hover {
-  background-color: #00b3aa;
-}
-
 .button-icon {
   width: 16px;
   height: 16px;

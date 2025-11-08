@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import './Form.css';
 import LogoWpp from '../../assets/logo-wpp.png'
 import ArrowRight from '../../assets/arrowright.png'
 import LinkButton from '../link-button';
 
 export const Form: React.FC = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
   const [role, setRole] = useState('');
-  const [linkResult, setLinkResult] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const roles = [
     'Sócio(a) / CEO / Proprietário(a)',
@@ -29,10 +31,10 @@ export const Form: React.FC = () => {
     'Outros Cargos',
   ];
 
-  const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
-    setLinkResult(null);
+    setIsLoading(true);
 
     console.log('Payload enviado para backend:', { name, phone, message, role });
 
@@ -44,28 +46,25 @@ export const Form: React.FC = () => {
         role,
       });
 
-      setLinkResult(response.data.link);
+      const resultData = {
+        whatsappLink: response.data.link,
+        phone: phone,
+        message: message,
+        name: name,
+        role: role,
+        generatedAt: new Date().toISOString()
+      };
+
+      sessionStorage.setItem('whatsappLinkData', JSON.stringify(resultData));
+
+      navigate('/results', { state: resultData });
+
     } catch (err: any) {
       console.error('Erro no request:', err);
-
-      setError(err.response?.data?.message || 'Erro ao gerar o link');
+      setError(err.response?.data?.message || 'Erro ao gerar o link. Tente novamente.');
+    } finally {
+      setIsLoading(false);
     }
-  };
-
-  const handleCopy = () => {
-    if (linkResult) {
-      navigator.clipboard.writeText(linkResult);
-      alert('Link copiado para a área de transferência!');
-    }
-  };
-
-  const handleReset = () => {
-    setName('');
-    setPhone('');
-    setMessage('');
-    setRole('');
-    setLinkResult(null);
-    setError(null);
   };
 
   return (
@@ -110,7 +109,7 @@ export const Form: React.FC = () => {
           </select>
         </label>
 
-          <label>
+        <label>
           Mensagem
           <textarea
             value={message}
@@ -120,36 +119,26 @@ export const Form: React.FC = () => {
           />
         </label>
 
-      <p className="privacy-note">
-        Ao preencher o formulário, concordo * em receber comunicações de acordo com meus interesses.
-        Ao informar meus dados, eu concordo com a <a href="https://legal.rdstation.com/pt/privacy-policy/" target="_blank" rel="noopener noreferrer">Política de privacidade</a>. Você pode alterar suas permissões de comunicação a qualquer tempo.
-      </p>
+        <p className="privacy-note">
+          Ao preencher o formulário, concordo * em receber comunicações de acordo com meus interesses.
+          Ao informar meus dados, eu concordo com a <a href="https://legal.rdstation.com/pt/privacy-policy/" target="_blank" rel="noopener noreferrer">Política de privacidade</a>. Você pode alterar suas permissões de comunicação a qualquer tempo.
+        </p>
 
-    <div className="link-button">
-      <LinkButton
-        text="Gerar link grátis"
-        icon={ArrowRight}
-        type="submit"
-        className="generate-button"
-        />
-    </div>
-      
-    </form>
+        <div className="link-button">
+          <LinkButton
+            text={"Gerar link grátis"}
+            icon={ArrowRight}
+            type="submit"
+            className="generate-button"
+          />
+        </div>
+      </form>
 
         <img 
           src={LogoWpp} 
           alt="Ícone do WhatsApp - balão de fala verde com telefone branco" 
           className="icon-whatsapp" 
         />
-
-        {linkResult && (
-          <div className="result">
-            <p>Seu link:</p>
-            <input type="text" readOnly value={linkResult} />
-            <button onClick={handleCopy}>Copiar link</button>
-            <button onClick={handleReset}>Gerar novo link</button>
-          </div>
-        )}
 
         {error && <p className="error">{error}</p>}
       </section>

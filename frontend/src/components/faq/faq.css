@@ -34,7 +34,7 @@
 
 .faq-content {
     display: flex;
-    flex-direction: column; /* 1 COLUNA POR PADRÃO (mobile/tablet) */
+    flex-direction: column;
     gap: 40px;
     align-items: center;
     width: 100%;
