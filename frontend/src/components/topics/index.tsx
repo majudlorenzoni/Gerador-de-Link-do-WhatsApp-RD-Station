@@ -8,7 +8,7 @@ import './topics.css'
 export const Topics: React.FC = () => {
   const modulesData = [
     {
-      icon: BoltLighting,
+      icon: ExternalLinkalt,
       title: 'Atalho rumo às vendas',
       text: 'O Gerador de link do WhatsApp faz com que usuários se transformem em contatos (Leads) e iniciem conversas certeiras com sua marca.'
     },
@@ -18,7 +18,7 @@ export const Topics: React.FC = () => {
       text: 'Você automatiza mensagens estimulando o início da conversa, o que facilita a vida dos usuários e clientes.'
     },
     {
-      icon: ExternalLinkalt,
+      icon: BoltLighting,
       title: 'Rápido e 100% gratuito',
       text: 'Não sabe como fazer link de WhatsApp? O Gerador da RD Station é fácil de usar e permite gerar links em segundos!'
     },

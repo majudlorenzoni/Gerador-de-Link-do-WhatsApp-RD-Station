@@ -4,11 +4,12 @@ import './index.css'
 import Header from './components/header'
 import { Form } from './components/form'
 import { Topics } from './components/topics'
-
+import { Benefits } from './components/benefits'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Header />
     <Form />
     <Topics />
+    <Benefits />
   </StrictMode>,
 )

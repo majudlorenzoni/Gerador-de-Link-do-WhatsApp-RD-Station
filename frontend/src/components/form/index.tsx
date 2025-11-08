@@ -3,6 +3,7 @@ import axios from 'axios';
 import './Form.css';
 import LogoWpp from '../../assets/logo-wpp.png'
 import ArrowRight from '../../assets/arrowright.png'
+import LinkButton from '../link-button';
 
 export const Form: React.FC = () => {
   const [name, setName] = useState('');
@@ -68,7 +69,7 @@ export const Form: React.FC = () => {
   };
 
   return (
-    <section className="form-section">
+    <section id="form-section" className="form-section">
       <h1 className="form-title">Gerador de Link do WhatsApp</h1>
       <p className="form-subtitle">Crie seu link de WhatsApp e inicie conversas com um clique nos seus canais digitais!</p>
 
@@ -124,10 +125,15 @@ export const Form: React.FC = () => {
         Ao informar meus dados, eu concordo com a <a href="https://legal.rdstation.com/pt/privacy-policy/" target="_blank" rel="noopener noreferrer">Política de privacidade</a>. Você pode alterar suas permissões de comunicação a qualquer tempo.
       </p>
 
-      <button type="submit" className="generate-button">
-        Gerar link grátis 
-        <img src={ArrowRight} alt="Seta para direita" className="button-icon" />
-      </button>
+    <div className="link-button">
+      <LinkButton
+        text="Gerar link grátis"
+        icon={ArrowRight}
+        type="submit"
+        className="generate-button"
+        />
+    </div>
+      
     </form>
 
         <img 
