@@ -150,4 +150,3 @@ export const Form: React.FC = () => {
   );
 };
 
-export default Form;
